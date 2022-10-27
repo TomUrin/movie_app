@@ -66,7 +66,14 @@ class MoviesController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $movie = Http::withToken(config('services.tmdb.token'))
+            ->get('http://api.themoviedb.org/3/movie/'.$id.'?append_to_response=credits,videos,images')
+            ->json();
+
+        return view('show', [
+            'movie' => $movie,
+        ]);
     }
 
     /**
@@ -77,7 +84,7 @@ class MoviesController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
