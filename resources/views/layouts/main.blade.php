@@ -9,6 +9,7 @@
 
     <!-- Fonts -->
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    <livewire:styles />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
@@ -32,10 +33,7 @@
                 </li>
             </ul>
             <div class="flex flex-col md:flex-row items-center">
-                <div class="relative mt-3 md:mt-0">
-                    <input type="text" class="bg-gray-800 rounded-full text-sm w-64 px-4 pl-8 py-1
-                    focus:outline-none focus:shadow-outline" placeholder="Search">
-                </div>
+                <livewire:search-dropdown>
                 <div class="md:ml-4 mt-3 md:mt-0">
                     <a href="#">
                         <img src="img/avatar.png" alt="avatar" class="rounded-full w-8 h-8">
@@ -45,5 +43,6 @@
         </div>
     </nav>
     @yield('content')
+    <livewire:scripts />
 </body>
 </html>
